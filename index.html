@@ -1,66 +1,47 @@
 <!DOCTYPE html>
 <html dir="rtl" lang="ar">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>السلام TV</title>
     <style>
         @keyframes pulse {
-            0% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-            100% {
-                transform: scale(1);
-            }
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
         }
-        
+
         @keyframes wave {
-            0% {
-                transform: rotate(-15deg);
-            }
-            50% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(-15deg);
-            }
+            0% { transform: rotate(-15deg); }
+            50% { transform: rotate(0deg); }
+            100% { transform: rotate(-15deg); }
         }
-        
+
         @keyframes fadeInOut {
-            0% {
-                opacity: 0.4;
-            }
-            50% {
-                opacity: 1;
-            }
-            100% {
-                opacity: 0.4;
-            }
+            0% { opacity: 0.4; }
+            50% { opacity: 1; }
+            100% { opacity: 0.4; }
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Arial', sans-serif;
         }
-        
+
         body {
             background-color: #f5f5f5;
             color: #333;
         }
-        
+
         .header {
             background: linear-gradient(135deg, #1da1f2, #0d47a1);
             padding: 20px;
             text-align: center;
             color: white;
         }
-        
+
         .logo-container {
             display: flex;
             justify-content: center;
@@ -68,7 +49,7 @@
             gap: 20px;
             margin: 20px 0;
         }
-        
+
         .salam-logo {
             width: 120px;
             height: 120px;
@@ -81,29 +62,29 @@
             color: white;
             font-size: 24px;
             font-weight: bold;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transform: rotate(45deg);
             overflow: hidden;
         }
-        
+
         .salam-logo::before {
             content: 'السلام';
             position: absolute;
             transform: rotate(-45deg);
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.3));
+            background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(255,255,255,0.3));
             padding: 10px;
             border-radius: 8px;
         }
-        
+
         .salam-logo::after {
             content: '';
             position: absolute;
             width: 150%;
             height: 20px;
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
             transform: rotate(-45deg) translateX(-50%);
         }
-        
+
         .clubhouse-logo {
             width: 120px;
             height: 120px;
@@ -113,16 +94,16 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             overflow: hidden;
         }
-        
+
         .clubhouse-logo::before {
             content: '👋';
             font-size: 60px;
             transform: rotate(-15deg);
         }
-        
+
         .clubhouse-text {
             position: absolute;
             bottom: -25px;
@@ -130,20 +111,20 @@
             font-weight: bold;
             color: #333;
         }
-        
+
         .nav {
             background: white;
             padding: 15px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         .nav ul {
             list-style: none;
             display: flex;
             justify-content: center;
             gap: 20px;
         }
-        
+
         .nav a {
             text-decoration: none;
             color: #333;
@@ -152,11 +133,11 @@
             border-radius: 5px;
             transition: background-color 0.3s;
         }
-        
+
         .nav a:hover {
             background-color: #f0f0f0;
         }
-        
+
         .live-indicator {
             background: #ff4444;
             color: white;
@@ -168,7 +149,7 @@
             margin: 10px 0;
             animation: pulse 2s infinite;
         }
-        
+
         .live-dot {
             width: 8px;
             height: 8px;
@@ -176,7 +157,7 @@
             border-radius: 50%;
             animation: fadeInOut 2s infinite;
         }
-        
+
         .now-playing {
             background: linear-gradient(135deg, #1a237e, #0d47a1);
             color: white;
@@ -186,7 +167,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .now-playing::before {
             content: '';
             position: absolute;
@@ -194,19 +175,19 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.1) 50%, rgba(255, 255, 255, 0.1) 75%, transparent 75%, transparent);
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0.1) 75%, transparent 75%, transparent);
             background-size: 50px 50px;
             animation: move 2s linear infinite;
             opacity: 0.2;
         }
-        
+
         .audio-controls {
             display: flex;
             align-items: center;
             gap: 15px;
             margin-top: 15px;
         }
-        
+
         .play-button {
             width: 50px;
             height: 50px;
@@ -218,20 +199,20 @@
             cursor: pointer;
             transition: transform 0.3s;
         }
-        
+
         .play-button:hover {
             transform: scale(1.1);
         }
-        
+
         .volume-control {
             flex: 1;
             height: 4px;
-            background: rgba(255, 255, 255, 0.3);
+            background: rgba(255,255,255,0.3);
             border-radius: 2px;
             position: relative;
             cursor: pointer;
         }
-        
+
         .volume-level {
             position: absolute;
             left: 0;
@@ -241,20 +222,20 @@
             background: white;
             border-radius: 2px;
         }
-        
+
         .upcoming-shows {
             background: white;
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
         }
-        
+
         .show-time-remaining {
             font-size: 0.9em;
             color: #666;
             margin-top: 5px;
         }
-        
+
         .visualizer {
             height: 50px;
             display: flex;
@@ -262,26 +243,20 @@
             gap: 3px;
             margin: 15px 0;
         }
-        
+
         .visualizer-bar {
             width: 4px;
             background: white;
             border-radius: 2px;
             animation: soundBars 1s infinite;
         }
-        
+
         @keyframes soundBars {
-            0% {
-                height: 10px;
-            }
-            50% {
-                height: 40px;
-            }
-            100% {
-                height: 10px;
-            }
+            0% { height: 10px; }
+            50% { height: 40px; }
+            100% { height: 10px; }
         }
-        
+
         .host-section {
             background: linear-gradient(135deg, #1a237e, #0d47a1);
             color: white;
@@ -291,7 +266,7 @@
             position: relative;
             overflow: hidden;
         }
-        
+
         .host-section::before {
             content: '';
             position: absolute;
@@ -299,18 +274,18 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 25%, transparent 25%);
+            background: linear-gradient(45deg, rgba(255,255,255,0.1) 25%, transparent 25%);
             background-size: 3px 3px;
             opacity: 0.1;
         }
-        
+
         .host-profile {
             display: flex;
             gap: 30px;
             align-items: center;
             margin-bottom: 30px;
         }
-        
+
         .host-avatar {
             width: 150px;
             height: 150px;
@@ -320,101 +295,101 @@
             justify-content: center;
             align-items: center;
             font-size: 72px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.2);
         }
-        
+
         .host-info {
             flex: 1;
         }
-        
+
         .host-name {
             font-size: 2em;
             margin-bottom: 10px;
             font-weight: bold;
         }
-        
+
         .host-description {
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        
+
         .host-stats {
             display: flex;
             gap: 20px;
             margin-top: 20px;
         }
-        
+
         .stat-item {
             text-align: center;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             padding: 10px 20px;
             border-radius: 10px;
         }
-        
+
         .stat-number {
             font-size: 1.5em;
             font-weight: bold;
             margin-bottom: 5px;
         }
-        
+
         .host-shows {
             margin-top: 30px;
         }
-        
+
         .show-card {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             padding: 15px;
             border-radius: 10px;
             margin-bottom: 15px;
             transition: transform 0.3s;
         }
-        
+
         .show-card:hover {
             transform: translateX(-5px);
         }
-        
+
         .show-time {
             font-size: 0.9em;
             opacity: 0.8;
             margin-top: 5px;
         }
-        
+
         .host-social {
             display: flex;
             gap: 15px;
             margin-top: 15px;
         }
-        
+
         .social-link {
             width: 40px;
             height: 40px;
             border-radius: 20px;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255,255,255,0.1);
             display: flex;
             justify-content: center;
             align-items: center;
             transition: transform 0.3s;
         }
-        
+
         .social-link:hover {
             transform: scale(1.1);
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255,255,255,0.2);
         }
-        
+
         .main-content {
             max-width: 1200px;
             margin: 20px auto;
             padding: 20px;
         }
-        
+
         .program-schedule {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
             margin-bottom: 20px;
         }
-        
+
         .program-item {
             padding: 15px;
             border-bottom: 1px solid #eee;
@@ -422,25 +397,25 @@
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .program-item:last-child {
             border-bottom: none;
         }
-        
+
         .events-section {
             background: white;
             padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
-        
+
         .event-card {
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 5px;
             background: #f9f9f9;
         }
-        
+
         footer {
             background: #333;
             color: white;
@@ -448,19 +423,19 @@
             padding: 20px;
             margin-top: 40px;
         }
-        
+
         @media (max-width: 768px) {
             .nav ul {
                 flex-direction: column;
                 align-items: center;
             }
+            
             .logo-container {
                 flex-direction: column;
             }
         }
     </style>
 </head>
-
 <body>
     <header class="header">
         <h1>السلام TV</h1>
@@ -605,7 +580,7 @@
         playButton.addEventListener('click', () => {
             isPlaying = !isPlaying;
             playButton.innerHTML = isPlaying ? '⏸️' : '▶️';
-
+            
             // Add animation class to visualizer when playing
             const visualizerBars = document.querySelectorAll('.visualizer-bar');
             visualizerBars.forEach(bar => {
@@ -618,10 +593,10 @@
             const now = new Date();
             const endTime = new Date();
             endTime.setHours(endTime.getHours() + 1);
-
+            
             const diff = endTime - now;
             const minutes = Math.floor(diff / 60000);
-
+            
             timeRemaining.textContent = `متبقي: ${minutes} دقيقة`;
         }
         setInterval(updateTimeRemaining, 60000);
@@ -630,7 +605,7 @@
         // Volume control interaction
         const volumeControl = document.querySelector('.volume-control');
         const volumeLevel = document.querySelector('.volume-level');
-
+        
         volumeControl.addEventListener('click', (e) => {
             const rect = volumeControl.getBoundingClientRect();
             const position = (e.clientX - rect.left) / rect.width;
@@ -639,7 +614,7 @@
 
         // Add smooth scrolling for navigation
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -668,5 +643,4 @@
         setInterval(updateTime, 1000);
     </script>
 </body>
-
 </html>
