@@ -459,30 +459,69 @@
     </nav>
 
     <main class="main-content">
-        <div class="now-playing">
-            <div class="live-indicator">
-                <div class="live-dot"></div>
-                مباشر
+        <div class="room-card">
+            <div class="room-title">
+                <span>البث المباشر من غرفة السلام</span>
+                <span class="live-tag">LIVE</span>
             </div>
-            <h2>البث المباشر الآن</h2>
-            <h3 id="current-show-title">حوار السلام مع غريب هافانا</h3>
-            <div class="visualizer">
-                <div class="visualizer-bar" style="animation-delay: -0.4s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.3s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.2s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.1s"></div>
-                <div class="visualizer-bar" style="animation-delay: 0s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.3s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.2s"></div>
-                <div class="visualizer-bar" style="animation-delay: -0.1s"></div>
-            </div>
-            <div class="audio-controls">
-                <div class="play-button" id="playButton">▶️</div>
-                <div class="volume-control">
-                    <div class="volume-level"></div>
+            <div class="host-card">
+                <div class="host-header">
+                    <div class="mic-icon">🎙️</div>
+                    <div>
+                        <h3>غريب هافانا</h3>
+                        <p>مقدم البرنامج</p>
+                    </div>
+                </div>
+                <div class="stats-row">
+                    <div class="stat-box">
+                        <span class="stat-number">+1M</span>
+                        <span>مستمع</span>
+                    </div>
+                    <div class="stat-box">
+                        <span class="stat-number">+500</span>
+                        <span>حلقة</span>
+                    </div>
+                </div>
+                <div class="action-buttons">
+                    <div class="action-button">
+                        <span>🎧</span>
+                        <span>استمع الآن</span>
+                    </div>
+                    <div class="action-button">
+                        <span>💬</span>
+                        <span>شارك</span>
+                    </div>
                 </div>
             </div>
-            <div class="show-time-remaining" id="timeRemaining">متبقي: 45 دقيقة</div>
+            <div class="program-info">
+                <h3>البرنامج الحالي</h3>
+                <div class="show-card">
+                    <h4>حوار السلام</h4>
+                    <p>مناقشة حول مستقبل السلام في المنطقة</p>
+                    <div class="visualizer">
+                        <div class="visualizer-bar" style="animation-delay: -0.4s"></div>
+                        <div class="visualizer-bar" style="animation-delay: -0.3s"></div>
+                        <div class="visualizer-bar" style="animation-delay: -0.2s"></div>
+                        <div class="visualizer-bar" style="animation-delay: -0.1s"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="room-card">
+            <h3>البرامج القادمة</h3>
+            <div class="upcoming-shows">
+                <div class="show-card">
+                    <div class="show-time">2:00 PM</div>
+                    <h4>صوت المجتمع</h4>
+                    <p>حوار مفتوح مع الجمهور</p>
+                </div>
+                <div class="show-card">
+                    <div class="show-time">5:00 PM</div>
+                    <h4>نقاش مفتوح</h4>
+                    <p>استضافة شخصيات مؤثرة</p>
+                </div>
+            </div>
         </div>
 
         <section class="host-section">
